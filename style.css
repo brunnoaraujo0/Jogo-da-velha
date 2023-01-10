@@ -1,0 +1,86 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #0a033c;
+    font-family: 'Fredoka One', Helvetica, sans-serif;
+}
+body .logo {
+    width: 180px;
+}
+
+h1 {
+    color: #FFF;
+    margin: 20px 0;
+}
+
+.area {
+    width: 390px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 20px;
+}
+.area .item {
+    width: 130px;
+    height: 130px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 70px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all ease 0.3s;
+}
+.item:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.item.t {
+    border-top: 10px solid #FFF;
+}
+.item.l {
+    border-left: 10px solid #FFF;
+}
+.item.r {
+    border-right: 10px solid #FFF;
+}
+.item.b {
+    border-bottom: 10px solid #FFF;
+}
+
+.info {
+    width: 300px;
+    display: flex;
+    margin-top: 30px;
+    border: 1px dotted #FFF;
+    padding: 10px;
+}
+.infoitem {
+    flex: 1;
+}
+.infotitulo {
+    text-align: center;
+    color: #FFF;
+    margin-bottom: 10px;
+}
+.infocorpo {
+    text-align: center;
+    color: #FFF;
+    font-size: 20px;
+}
+
+.reset {
+    border: 1px solid #000;
+    background-color: rgba(0, 0, 0, 0.2);
+    color: #FFF;
+    padding: 10px;
+    margin-top: 20px;
+}
