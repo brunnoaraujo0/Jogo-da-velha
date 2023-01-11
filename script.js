@@ -76,7 +76,6 @@ function renderQuadro() { //FUNCAO QUE RENDERIZA O QUADRO
 
 function renderInfo() { //FUNCAO QUE ATUALIZA O PAINEL DE JOGADOR
     document.querySelector('.vez').innerHTML = vez;
-    document.querySelector('.resultado').innerHTML = warning;
 }
 
 function togglePlayer() { //FUNCAO PARA TROCAR O JOGADOR
@@ -88,13 +87,16 @@ function checkGame() { //FUNCAO PARA SABER A SITUACAO DO JOGO
     if(checkWinnerFor('X')) { //ESSE CHECKWINNERFOR TESTA SE X GANHOU, ELA RETORNA UM BOOLEANO
         warning = 'O "X" venceu'; 
         playing = false;
+        modalAlert();
        
-    } else if(checkWinnerFor('o')) { //SE X NAO GANHOU, TESTE SE O GANHOU
+    } else if(checkWinnerFor('O')) { //SE X NAO GANHOU, TESTE SE O GANHOU
         warning = 'O "O" venceu';
         playing = false;
+        modalAlert();
     } else if(isFull()) { //SE NENHUM DOS DOIS GANHOU, TESTE SE DEU EMPATE
         warning = 'Deu empate';
         playing = false;
+        modalAlert();
     }
 }
 
@@ -129,14 +131,6 @@ function isFull() { //FUNCAO PRA TESTAR SE DEU EMPATE
     return true; //CASO PASSE PELO FOR E TODOS TIVEREM PREENCHIDO, CONSEQUENTIMENTE DEU EMPATE
 }
 
-
-function color(){
-
-    let caixas = document.querySelectorAll('.item');
-
-    caixas.forEach(item => {
-        if(item.innerHTML == 'X') {
-            console.log('ola');
-        }
-    })
+function modalAlert() {
+    document.querySelector('.modalVencedor').style.display = 'flex';
 }
