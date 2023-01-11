@@ -30,8 +30,14 @@ document.querySelectorAll('.item').forEach((item)=>{ //EVENTO DE CADA CAIXINHA
     });
 });
 
+document.querySelector('.cancel').addEventListener('click', ()=>{
+    document.querySelector('.modalVencedor').style.display = 'none';
+})
 
-
+document.querySelector('.reset1').addEventListener('click', ()=> {
+    document.querySelector('.modalVencedor').style.display = 'none';
+    reset();
+});
 
 
 // FUNCOES ///////////////////////////////////////////////////////////////////////////////////
@@ -85,16 +91,19 @@ function togglePlayer() { //FUNCAO PARA TROCAR O JOGADOR
 
 function checkGame() { //FUNCAO PARA SABER A SITUACAO DO JOGO
     if(checkWinnerFor('X')) { //ESSE CHECKWINNERFOR TESTA SE X GANHOU, ELA RETORNA UM BOOLEANO
-        warning = 'O "X" venceu'; 
+        warning = 'X ';
+        document.querySelector('.vencedor h1').innerHTML = warning; 
         playing = false;
         modalAlert();
        
     } else if(checkWinnerFor('O')) { //SE X NAO GANHOU, TESTE SE O GANHOU
-        warning = 'O "O" venceu';
+        warning = 'O';
+        document.querySelector('.vencedor h1').innerHTML = warning; 
         playing = false;
         modalAlert();
     } else if(isFull()) { //SE NENHUM DOS DOIS GANHOU, TESTE SE DEU EMPATE
         warning = 'Deu empate';
+        document.querySelector('.vencedor h1').innerHTML = warning; 
         playing = false;
         modalAlert();
     }
